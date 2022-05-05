@@ -3,10 +3,15 @@ package com.heroes.mongo.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "heroes")
 public class Hero implements Serializable{
 
 	private static final long serialVersionUID = -5666249927370184317L;
 	
+	@Id
 	private String id;
 	private String name;
 	private Integer power;
